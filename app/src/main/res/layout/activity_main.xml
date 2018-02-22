@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ocimara.pokeagenda.MainActivity">
+
+    <EditText
+        android:id="@+id/tvNome"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/btPesquisa"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="PESQUISAR"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <ImageView
+        android:id="@+id/ivImagem"
+        android:layout_width="334dp"
+        android:layout_height="174dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <TextView
+        android:id="@+id/tvTexto"
+        android:layout_width="341dp"
+        android:layout_height="93dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+
+</android.support.constraint.ConstraintLayout>
