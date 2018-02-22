@@ -1,3 +1,3 @@
 package com.example.ocimara.pokeagenda.model
 
-data class Pokemon(var name: String)
+data class Pokemon(var name: String, var Sprites: Sprite)

@@ -2,8 +2,10 @@ package com.example.ocimara.pokeagenda
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.ocimara.pokeagenda.API.PokemonAPI
 import com.example.ocimara.pokeagenda.model.Pokemon
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,8 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun pesquisarPokemon()
-    {
+    fun pesquisarPokemon() {
         val retrofit = Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -38,10 +39,16 @@ class MainActivity : AppCompatActivity() {
         api.buscarPokemon(etNumneroPokemon.text.toString().toInt())
                 .enqueue(object : Callback<Pokemon> {
                     override fun onResponse(call: Call<Pokemon>?, response: Response<Pokemon>?) {
+                        tvNomePokemon.setText(response?.body()?.name)
+
+                        Picasso.with(applicationContext)
+                                .load(response?.body()?.Sprites?.frontDefault)
+                                .into(ivPokemon);
 
                     }
 
                     override fun onFailure(call: Call<Pokemon>?, t: Throwable?) {
+                        Toast.makeText(applicationContext, t?.message, Toast.LENGTH_SHORT).show()
 
                     }
                 })
